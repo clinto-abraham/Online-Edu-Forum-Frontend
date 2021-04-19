@@ -1,0 +1,109 @@
+body {
+    text-align: center;
+    font-family: "Lato", sans-serif;
+}
+
+/* form control css */
+label{
+    display: inline-block;
+    padding: 6px;
+}
+
+.box-teacher-1{
+    display: block;
+    padding: 20px;
+}
+
+.box-teacher-1{
+    display: inline-block;
+    padding: 200px;
+}
+
+.form-box{
+    padding-top: 35px;
+    width: 500px;
+    text-align: left;
+    position: relative;
+    left: 25%;
+    padding-left: 50px;
+}
+
+.input-form{
+    width: 300px;
+    height: 30px;
+    position: relative;
+    right: 0px;
+}
+
+.courseSelect{
+    position: relative;
+    left: 8px;
+    opacity: 0.8;
+    border-radius: 10px;
+    width: 300px;
+    height: 30px;
+    display: inline-block;
+}
+
+.priceTag{
+    display: inline-block;
+    padding-left: 25px;
+    visibility: hidden;
+}
+
+.checkboxPrice {
+    margin : 15px;
+}
+
+.checkboxPrice:checked ~ .priceTag {
+    visibility: visible;
+}
+/* form ends here */
+
+/* introducing collapse navbar */
+.titleAdmin {
+    padding-top: 100px;
+    color: #f3f4ed;
+    font-family: 'Noto Sans HK', sans-serif;
+    text-align: left;
+}
+.menu-content {
+    max-height: 0;
+    overflow: hidden;
+    font-family: 'Oswald', sans-serif; 
+    padding: 0 0 0 50px;
+    color: #f3f4ed;
+    text-align: left;
+}
+.collapsible-menu {
+    background-color:#536162;
+    padding: 0px 30px;
+    border-bottom: 3px solid #424642;
+    
+}
+.collapsible-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+.collapsible-menu a {
+    display:block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* transform dropdown style */
+.collapsible-menu label {
+    font-size: 56px;
+    display: block;
+    cursor: pointer;
+    padding: 10px 0 10px 50px;
+}
+input#menu {
+    display: none;
+}
+
+input:checked ~ .menu-content {
+    max-height: 100%;
+}
+
+/* navbar top css ends here */
