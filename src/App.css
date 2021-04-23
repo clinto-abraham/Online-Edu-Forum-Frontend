@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    font-family: "Lato", sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* form control css */
@@ -9,9 +9,14 @@ label{
     padding: 6px;
 }
 
+.grid {
+    padding: 20px;
+    display: inline-block;
+}
 .box-teacher-1{
     display: block;
     padding: 20px;
+    text-align: right;
 }
 
 .box-teacher-1{
@@ -64,7 +69,7 @@ label{
 .titleAdmin {
     padding-top: 100px;
     color: #f3f4ed;
-    font-family: 'Noto Sans HK', sans-serif;
+    font-family: sans-serif;
     text-align: left;
 }
 .menu-content {
@@ -72,25 +77,36 @@ label{
     overflow: hidden;
     font-family: 'Oswald', sans-serif; 
     padding: 0 0 0 50px;
-    color: #f3f4ed;
+    color: #070707;
+    text-decoration: none;
     text-align: left;
 }
+
 .collapsible-menu {
-    background-color:#536162;
+    background-color:#4e8eb8;
     padding: 0px 30px;
-    border-bottom: 3px solid #424642;
+    color: rgb(243, 250, 248);
+    font-family: 'Roboto', sans-serif;
     
 }
 .collapsible-menu ul {
     list-style-type: none;
+    color: #f4eee8;
     padding: 0;
 }
-.collapsible-menu a {
+.collapsible-menu li {
     display:block;
-    padding: 10px;
+    padding: 8px;
     text-decoration: none;
 }
-
+.link {
+    color: #FFF;
+    margin: 15px;
+  }
+  .link:hover {
+     color: #8fd9a8;
+     text-decoration: none;
+  }
 /* transform dropdown style */
 .collapsible-menu label {
     font-size: 56px;
@@ -107,3 +123,18 @@ input:checked ~ .menu-content {
 }
 
 /* navbar top css ends here */
+
+/* Admin component css below */
+
+.form-admin{
+    padding: 20px;
+    
+}
+
+.form-actions{
+    padding : 30px;
+}
+
+.save{
+    margin: 8px;
+}
