@@ -42,14 +42,14 @@ function BottomNavbar() {
   return (
     <>
     <footer className={classes.footer}>
-      <div class="container-fluid">
-        <div class="row">
-        <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-navbar-content">
+      <div className="container-fluid">
+        <div className="row">
+        <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-navbar-content">
             <Search />
             </div>
 
 
-            <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-navbar-content">
+            <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-navbar-content">
               
               
                 

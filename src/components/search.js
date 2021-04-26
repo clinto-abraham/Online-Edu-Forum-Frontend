@@ -22,10 +22,10 @@ export const RollNumber = () => {
 }
 export const Search = () => {
   return (
-    <div class="container-fluid">
-        <div class="row">
+    <div className="container-fluid">
+        <div className="row">
           
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
+            <div className="col-xs-12 col-sm-12 col-md-4 col-lg-3">
               
                 
             <div style={{ width: 300 }}>

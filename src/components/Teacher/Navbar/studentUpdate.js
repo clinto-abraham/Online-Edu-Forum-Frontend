@@ -33,6 +33,7 @@ const StudentUpdate = ({ customers, ...rest }) => {
     }
 
     setSelectedCustomerIds(newSelectedCustomerIds);
+    setLimit(null);
   };
 
   const handleSelectOne = (event, id) => {
