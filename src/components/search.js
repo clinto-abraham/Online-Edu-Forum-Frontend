@@ -6,6 +6,7 @@ import fetch from 'cross-fetch';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+
 export const RollNumber = () => {
     return(<div style={{ width: 300 }}>
         <Autocomplete
@@ -21,24 +22,36 @@ export const RollNumber = () => {
 }
 export const Search = () => {
   return (
-    <div style={{ width: 300 }}>
+    <div class="container-fluid">
+        <div class="row">
+          
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
+              
+                
+            <div style={{ width: 300 }}>
      
-      <Autocomplete
-        freeSolo
-        id="free-solo-2-demo"
-        disableClearable
-        options={top100Films.map((option) => option.title)}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Search input"
-            margin="normal"
-            variant="outlined"
-            InputProps={{ ...params.InputProps, type: 'search' }}
-          />
-        )}
-      />
-    </div>
+     <Autocomplete
+       freeSolo
+       id="free-solo-2-demo"
+       disableClearable
+       options={top100Films.map((option) => option.title)}
+       renderInput={(params) => (
+         <TextField
+           {...params}
+           label="Search input"
+           margin="normal"
+           variant="outlined"
+           InputProps={{ ...params.InputProps, type: 'search' }}
+         />
+       )}
+     />
+   </div>
+            </div>
+
+
+            </div>
+            </div>
+    
   );
 }
 

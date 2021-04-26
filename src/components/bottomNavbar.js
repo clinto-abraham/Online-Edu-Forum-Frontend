@@ -3,17 +3,22 @@ import { Search } from "./search";
 
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
+
 import Link from "@material-ui/core/Link";
-import { CRow, CCol } from "@coreui/react";
+
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" style={{textAlign:"center"}} >
+    <Typography
+      variant="body2"
+      color="textSecondary"
+      style={{ textAlign: "center" }}
+    >
       {"Copyright © "}
       <Link color="inherit" href="https://material-ui.com/">
         Name of Organization or Link of Official Site
-      </Link>{"  @"}
+      </Link>
+      {"  @"}
       {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -21,15 +26,7 @@ function Copyright() {
 }
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-    flexDirection: "column",
-    minHeight: "100vh",
-  },
-  main: {
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(2),
-  },
+  
   footer: {
     padding: theme.spacing(3, 2),
     marginTop: "auto",
@@ -43,32 +40,52 @@ const useStyles = makeStyles((theme) => ({
 function BottomNavbar() {
   const classes = useStyles();
   return (
+    <>
     <footer className={classes.footer}>
-      <CRow>
-        
-          
-            <CCol xs="3">
-              <Search />
-            </CCol>
-            <CCol xs="6">
-            
-              <Container maxWidth="sm">
-                <Typography variant="body2" color="textSecondary" style={{textAlign:"center"}}>
-                Contact:{"+91-"}{'9876543210 / '} Telephone: {"02836-987654"}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" style={{textAlign:"center"}}> Email id: onlineschool@gmail.com
-                </Typography>
-                <Copyright />
+      <div class="container-fluid">
+        <div class="row">
+        <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-navbar-content">
+            <Search />
+            </div>
 
-                <Typography variant="body2" color="textSecondary" style={{textAlign:"center"}} >Created By Top Of Cliff Developers </Typography>
-              </Container>
+
+            <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-6 bottom-navbar-content">
               
+              
+                
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    style={{ textAlign: "center" }}
+                  >
+                    
+                    
+                      <a href="mailto:clinto92@gmail.com">
+                        Email us on : onlineschool@gmail.com
+                      </a>
+                    
+                  </Typography>
+                  <Copyright />
+
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    style={{ textAlign: "center" }}
+                  >
+                    Created By Top Of Cliff Developers
+                  </Typography>
+                
+                  
+            </div>
+
             
-            </CCol>
+            
+            
           
-        
-      </CRow>
-      </footer>
+        </div>
+      </div>
+    </footer>
+    </>
   );
 }
 

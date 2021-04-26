@@ -1,6 +1,3 @@
-import Navbar from '../../Navbar';
-import BottomNavbar from '../../bottomNavbar';
-
 import React, { useState } from "react";
 
 import {
@@ -13,6 +10,9 @@ import {
   Grid,
   TextField,
 } from "@material-ui/core";
+
+import NavbarAdmin from "./NavbarAdmin/NavbarAdmin";
+import BottomNavbar from "../bottomNavbar";
 
 const states = [
   { value: "kerala", label: "Kerala" },
@@ -54,7 +54,7 @@ const states = [
   { value: "assam", label: "Assam",},
 ];
 
-const AccountProfileDetails = (props) => {
+const AccountSettingsAdmin = (props) => {
   const [values, setValues] = useState({
     firstName: "James",
     lastName: "Abraham",
@@ -85,7 +85,7 @@ const AccountProfileDetails = (props) => {
 
   return (
     <>
-      <Navbar />
+      <NavbarAdmin />
       <form autoComplete="off" noValidate {...props}>
         <Card>
           <CardHeader
@@ -244,4 +244,4 @@ const AccountProfileDetails = (props) => {
   );
 };
 
-export default AccountProfileDetails;
+export default AccountSettingsAdmin;

@@ -12,17 +12,15 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 
 import Container from '@material-ui/core/Container';
-import useStyles from './Styles/makeStyles';
-
+import useStyles from '../Styles/makeStyles';
 import { CCardBody } from '@coreui/react';
-import BottomNavbar from './bottomNavbar';
-import Navbar from './Navbar';
+import BottomNavbar from '../bottomNavbar';
+import NavbarAdmin from './NavbarAdmin/NavbarAdmin';
 
 
 
 
-
-export default function SignIn() {
+export default function AdminSignIn() {
   const [username,setUsername] = useState({
     username: '',
     password: ''
@@ -37,7 +35,7 @@ export default function SignIn() {
 
   return (
     <>
-    <Navbar />
+    <NavbarAdmin />
     <CCardBody>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -48,7 +46,7 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} >
+        <form className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"

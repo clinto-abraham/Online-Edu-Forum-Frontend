@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import {
-  Avatar,
   Box,
   Card,
   Checkbox,
@@ -11,22 +10,24 @@ import {
   TableBody,
   TableCell,
   TableHead,
-  TablePagination,
   TableRow,
   Typography
 } from '@material-ui/core';
-import getInitials from '../../getInitial/getInitial';
+
+import { CInput, CSelect, CInputGroupAppend, CInputGroupText, CInputGroup} from "@coreui/react";
+
 
 const StudentUpdate = ({ customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [limit, setLimit] = useState(10);
-  const [page, setPage] = useState(0);
+  
 
   const handleSelectAll = (event) => {
     let newSelectedCustomerIds;
 
     if (event.target.checked) {
       newSelectedCustomerIds = customers.map((customer) => customer.id);
+      console.log(newSelectedCustomerIds);
     } else {
       newSelectedCustomerIds = [];
     }
@@ -54,13 +55,7 @@ const StudentUpdate = ({ customers, ...rest }) => {
     setSelectedCustomerIds(newSelectedCustomerIds);
   };
 
-  const handleLimitChange = (event) => {
-    setLimit(event.target.value);
-  };
-
-  const handlePageChange = (event, newPage) => {
-    setPage(newPage);
-  };
+  
 
   return (
     <Card {...rest}>
@@ -87,13 +82,22 @@ const StudentUpdate = ({ customers, ...rest }) => {
                   Email
                 </TableCell>
                 <TableCell>
-                  Location
+                  Number of class done
+                </TableCell>
+                <TableCell>
+                  Period (hours)
                 </TableCell>
                 <TableCell>
                   Phone
                 </TableCell>
                 <TableCell>
-                  Registration date
+                  Date of completion
+                </TableCell>
+                <TableCell>
+                Roll Number
+                </TableCell>
+                <TableCell>
+                Class
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -118,12 +122,7 @@ const StudentUpdate = ({ customers, ...rest }) => {
                         display: 'flex'
                       }}
                     >
-                      <Avatar
-                        src={customer.avatarUrl}
-                        sx={{ mr: 2 }}
-                      >
-                        {getInitials(customer.name)}
-                      </Avatar>
+                      
                       <Typography
                         color="textPrimary"
                         variant="body1"
@@ -136,13 +135,36 @@ const StudentUpdate = ({ customers, ...rest }) => {
                     {customer.email}
                   </TableCell>
                   <TableCell>
-                    {`${customer.address.city}, ${customer.address.state}, ${customer.address.country}`}
+                  <CSelect custom name="select" id="select">
+                    <option value="0">Select</option>
+                    <option value="1">1 </option>
+                    <option value="2">2 </option>
+                    <option value="3">3</option>
+                    <option value="1">4 </option>
+                    <option value="2">5 </option>
+                    <option value="3">6</option>
+                  </CSelect>
+                   
                   </TableCell>
                   <TableCell>
-                    {customer.phone}
+                  <CInputGroup className="input-prepend" > 
+                  <CInput id="class" placeholder="6" type="number" /> 
+                  <CInputGroupAppend>
+                      <CInputGroupText>Hours</CInputGroupText>
+                  </CInputGroupAppend>
+                  </CInputGroup>
+
                   </TableCell>
                   <TableCell>
-                    {moment(customer.createdAt).format('DD/MM/YYYY')}
+                  {customer.phone}
+                  </TableCell>
+                  <TableCell>
+                  <CInput
+                    type="date"
+                    id="date-input"
+                    name="date-input"
+                    placeholder="date"
+                  />
                   </TableCell>
                 </TableRow>
               ))}
@@ -150,15 +172,7 @@ const StudentUpdate = ({ customers, ...rest }) => {
           </Table>
         </Box>
       </PerfectScrollbar>
-      <TablePagination
-        component="div"
-        count={customers.length}
-        onPageChange={handlePageChange}
-        onRowsPerPageChange={handleLimitChange}
-        page={page}
-        rowsPerPage={limit}
-        rowsPerPageOptions={[5, 10, 25]}
-      />
+      
     </Card>
   );
 };

@@ -2,16 +2,26 @@ body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
 }
-
+.bottom-navbar-content{
+    text-align: left;
+    text-align-last: left;
+    padding: 20px;
+}
+.studentInfoHeader{
+    margin: 15px;
+    display: inline-flexbox;
+}
 /* form control css */
 label{
     display: inline-block;
     padding: 6px;
 }
-
+.padding-grid{
+    padding: 20px;
+}
 .grid {
     padding: 20px;
-    display: inline-block;
+    
 }
 .box-teacher-1{
     display: block;
@@ -68,7 +78,7 @@ label{
 /* introducing collapse navbar */
 .titleAdmin {
     padding-top: 100px;
-    color: #f3f4ed;
+    color: #080808;
     font-family: sans-serif;
     text-align: left;
 }
@@ -82,6 +92,9 @@ label{
     text-align: left;
 }
 
+.teacher-register{
+    padding: 40px;
+}
 .collapsible-menu {
     background-color:#4e8eb8;
     padding: 0px 30px;
@@ -138,3 +151,51 @@ input:checked ~ .menu-content {
 .save{
     margin: 8px;
 }
+
+.Accordion{
+    width: 180px;
+    
+    text-align: center;
+    margin: 20px;
+    padding: 0px;
+}
+.card-payday{
+    margin: 100px;
+    padding: 50px;
+}
+.assign-teacher-container{
+    margin: 20px;
+    
+    padding: 10px;
+}
+.navbar-control-static{
+    background-color: powderblue;
+    
+
+}
+/* .account-settings page css starts here */
+.button-account{
+    margin: 20px;
+}
+.account-settings{
+    margin: 20px;
+}
+.textinput-account-settings{
+    width: 45%;
+
+}
+/* .account-settings page css ends here */
+/* bottom navbar css here below */
+.footer-link{
+    color: #495464;
+    text-decoration: none;
+    width: 32px;
+    border-radius: 25px;
+    height: 32px;
+  }
+  .bottom-container{
+    background-color: #bbbfca;
+    text-align: center;
+    padding: 50px 0 20px;
+  }
+/* bottom navbar css finishes here */

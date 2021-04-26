@@ -24,6 +24,7 @@ import {
   CRow,
   
 } from "@coreui/react";
+import NavbarAdmin from "./NavbarAdmin/NavbarAdmin";
 
 
 const BasicForms = () => {
@@ -31,6 +32,7 @@ const BasicForms = () => {
 
   return (
     <>
+    <NavbarAdmin />
     <div className="form-admin">
       <CRow>
         <CCol xs="12" sm="12">
@@ -56,7 +58,7 @@ const BasicForms = () => {
 
               <CFormGroup row className="my-0">
                 <CCol xs="4">
-                  <CLabel htmlFor="roll-number"> Unique Roll Number</CLabel>
+                  <CLabel > Unique Roll Number</CLabel>
                   <CInput
                     id="roll-number"
                     placeholder="Assign roll number for future reference"
@@ -73,26 +75,26 @@ const BasicForms = () => {
               </CFormGroup>
 
               <CFormGroup>
-                <CLabel htmlFor="street">Adress of student</CLabel>
+                <CLabel >Adress of student</CLabel>
                 <CInput id="street" placeholder="Enter street name" />
               </CFormGroup>
 
               <CFormGroup row className="my-0">
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="city">City</CLabel>
+                    <CLabel >City</CLabel>
                     <CInput id="city" placeholder="Enter name of city" />
                   </CFormGroup>
                 </CCol>
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="postal-code">Postal Code</CLabel>
+                    <CLabel >Postal Code</CLabel>
                     <CInput id="postal-code" placeholder="Postal Code" />
                   </CFormGroup>
                 </CCol>
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="country">Country</CLabel>
+                    <CLabel >Country</CLabel>
                     <CInput id="country" placeholder="India" />
                   </CFormGroup>
                 </CCol>
@@ -101,7 +103,7 @@ const BasicForms = () => {
               <CFormGroup row className="my-0">
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="appendedPrependedInput">
+                    <CLabel >
                       Total Payment
                     </CLabel>
                     <div className="controls">
@@ -112,7 +114,7 @@ const BasicForms = () => {
                         <CInput
                           id="appendedPrependedInput"
                           size="16"
-                          type="text"
+                          type="number"
                         />
                         <CInputGroupAppend>
                           <CInputGroupText>.00</CInputGroupText>
@@ -123,7 +125,7 @@ const BasicForms = () => {
                 </CCol>
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="appendedPrependedInput">
+                    <CLabel >
                       Payment received
                     </CLabel>
                     <div className="controls">
@@ -134,7 +136,7 @@ const BasicForms = () => {
                         <CInput
                           id="appendedPrependedInput"
                           size="16"
-                          type="text"
+                          type="number"
                         />
                         <CInputGroupAppend>
                           <CInputGroupText>.00</CInputGroupText>
@@ -146,7 +148,7 @@ const BasicForms = () => {
 
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="appendedPrependedInput">
+                    <CLabel >
                       Payment due
                     </CLabel>
                     <div className="controls">
@@ -157,7 +159,7 @@ const BasicForms = () => {
                         <CInput
                           id="appendedPrependedInput"
                           size="16"
-                          type="text"
+                          type="number"
                         />
                         <CInputGroupAppend>
                           <CInputGroupText>.00</CInputGroupText>
@@ -170,7 +172,7 @@ const BasicForms = () => {
 
               <CFormGroup row>
                 <CCol xs="8">
-                  <CLabel htmlFor="textarea-input">Additional description :</CLabel>
+                  <CLabel>Additional description :</CLabel>
                   <CTextarea
                     name="textarea-input"
                     id="textarea-input"
@@ -193,7 +195,7 @@ const BasicForms = () => {
                         <CLabel
                           variant="checkbox"
                           className="form-check-label"
-                          htmlFor="checkbox1"
+                          
                         >
                           Listening
                         </CLabel>
@@ -208,7 +210,7 @@ const BasicForms = () => {
                         <CLabel
                           variant="checkbox"
                           className="form-check-label"
-                          htmlFor="checkbox2"
+                          
                         >
                           Reading
                         </CLabel>
@@ -223,7 +225,7 @@ const BasicForms = () => {
                         <CLabel
                           variant="checkbox"
                           className="form-check-label"
-                          htmlFor="checkbox3"
+                          
                         >
                           Writing
                         </CLabel>
@@ -237,7 +239,7 @@ const BasicForms = () => {
                         <CLabel
                           variant="checkbox"
                           className="form-check-label"
-                          htmlFor="checkbox4"
+                          
                         >
                           Speaking
                         </CLabel>
@@ -249,7 +251,7 @@ const BasicForms = () => {
 
               <CFormGroup row>
                 <CCol xs="4">
-                  <CLabel htmlFor="date-input">Date of admission</CLabel>
+                  <CLabel>Date of admission</CLabel>
                   <CInput
                     type="date"
                     id="date-input"
@@ -269,7 +271,7 @@ const BasicForms = () => {
                 </CCol>
 
                 <CCol xs="4">
-                  <CLabel htmlFor="disabled-input">Disabled Input</CLabel>
+                  <CLabel>Course completion certificate</CLabel>
                   <CInput
                     id="disabled-input"
                     name="disabled-input"
@@ -282,7 +284,7 @@ const BasicForms = () => {
 
               <CFormGroup row>
                 <CCol xs="4">
-                  <CLabel htmlFor="select">Select mode of study</CLabel>
+                  <CLabel>Select mode of study</CLabel>
                   <CSelect custom name="select" id="select">
                     <option value="0">Please select</option>
                     <option value="1">Online Course </option>
@@ -303,7 +305,7 @@ const BasicForms = () => {
                     />
                     <CLabel
                       variant="custom-checkbox"
-                      htmlFor="inline-checkbox1"
+                      
                     >
                       IMPS
                     </CLabel>
@@ -319,7 +321,7 @@ const BasicForms = () => {
                     />
                     <CLabel
                       variant="custom-checkbox"
-                      htmlFor="inline-checkbox2"
+                      
                     >
                       NEFT
                     </CLabel>
@@ -334,7 +336,7 @@ const BasicForms = () => {
                     />
                     <CLabel
                       variant="custom-checkbox"
-                      htmlFor="inline-checkbox2"
+                      
                     >
                       Google Pay
                     </CLabel>
@@ -349,7 +351,7 @@ const BasicForms = () => {
                     />
                     <CLabel
                       variant="custom-checkbox"
-                      htmlFor="inline-checkbox2"
+                      
                     >
                       PhonePe 
                     </CLabel>
@@ -364,7 +366,7 @@ const BasicForms = () => {
                     />
                     <CLabel
                       variant="custom-checkbox"
-                      htmlFor="inline-checkbox3"
+                      
                     >
                       CASH
                     </CLabel>

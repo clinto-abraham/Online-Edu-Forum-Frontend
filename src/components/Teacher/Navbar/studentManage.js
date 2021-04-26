@@ -3,15 +3,15 @@ import {
     Button,
     Card,
     CardContent,
-    TextField,
-    InputAdornment,
-    SvgIcon
+    
   } from '@material-ui/core';
-  import { Search as SearchIcon } from 'react-feather';
+  import {CCardBody, CCardHeader, CCard } from "@coreui/react";
+  
+import { Search } from '../../search';
   
   const StudentManagement = (props) => (
     <>
-    
+    <CCardBody>
     <Box {...props}>
       <Box
         sx={{
@@ -19,47 +19,42 @@ import {
           justifyContent: 'flex-end'
         }}
       >
-        <Button>
-          Import
-        </Button>
-        <Button sx={{ mx: 1 }}>
-          Export
-        </Button>
+        </Box>
+        
+      
+
+      
+
+      <Box sx={{ mt: 3 }}>
+        <Card>
+        <div className="lead">
         <Button
           color="primary"
           variant="contained"
+          style={{ margin:"20px"}}
         >
-          Add customer
+          Update
         </Button>
-      </Box>
-      <Box sx={{ mt: 3 }}>
-        <Card>
+        <Button
+          color="secondary"
+          variant="contained"
+          style={{ margin:"20px"}}
+        >
+          Clear
+        </Button>
+        </div>
           <CardContent>
-            <Box sx={{ maxWidth: 500 }}>
-              <TextField
-                fullWidth
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SvgIcon
-                        fontSize="small"
-                        color="action"
-                      >
-                        <SearchIcon />
-                      </SvgIcon>
-                    </InputAdornment>
-                  )
-                }}
-                placeholder="Search customer"
-                variant="outlined"
-              />
-            </Box>
+          <CCard>
+            <CCardHeader>Update student's class records</CCardHeader>
+            
+            <Search />
+            </CCard>
           </CardContent>
         </Card>
       </Box>
     </Box>
 
-
+</CCardBody>
     
     </>
   );

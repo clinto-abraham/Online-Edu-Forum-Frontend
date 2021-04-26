@@ -1,40 +1,60 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   BarChart as BarChartIcon,
   Lock as LockIcon,
   Settings as SettingsIcon,
-  UserPlus as UserPlusIcon,
-  
-} from 'react-feather';
-import { Typography, ListItem } from '@material-ui/core';
+} from "react-feather";
 
 function Navbar() {
   return (
     <>
-      <div className="collapsible-menu">
-        <input type="checkbox" id="menu" />
-        <label for="menu" className="titleAdmin"><Typography>☰ Organization</Typography> </label>
-        <div className="menu-content">
-          <ul>
-            <li>
-              <Link to="/dashboard" className="link" > <ListItem><BarChartIcon className="icon" />Dashboard </ListItem></Link>
-            </li>
-            <li>
-            <Link to="/student-management" className="link" > <ListItem><UserPlusIcon className="icon" />Students Management</ListItem></Link>
-            </li>
-            
-            
-            <li>
-              <Link to="/payday-control" className="link"> <ListItem>Payday Controls</ListItem></Link>
-            </li>
-            <li>
-              <Link to="/update-account" className="link" > <ListItem><SettingsIcon/> Account Settings</ListItem></Link>
-            </li>
-            
-            <li><Link to="/" className="link"><ListItem> <LockIcon className="icon" /> Logout</ListItem></Link></li>
-          </ul>
+      <div className="pos-f-t">
+        <div className="collapse" id="navbarToggleExternalContent">
+          <div className="bg-dark p-4">
+            <h4 className="text-white">Organization Name</h4>
+            <span className="text-muted">
+              <Link to="/dashboard" className="link">
+                <BarChartIcon className="icon" />
+                Dashboard
+              </Link>
+            </span>
+            <span className="text-muted">
+              <Link to="/student-management" className="link">
+                Students Management
+              </Link>
+            </span>
+
+            <span className="text-muted">
+              <Link to="/payday-control" className="link">
+                Payday Controls
+              </Link>
+            </span>
+            <span className="text-muted">
+              <Link to="/update-account" className="link">
+                <SettingsIcon /> Account Settings
+              </Link>
+            </span>
+            <span className="text-muted">
+              <Link to="/" className="link">
+                <LockIcon className="icon" /> Logout
+              </Link>
+            </span>
+          </div>
         </div>
+        <nav className="navbar navbar-dark bg-dark">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+        </nav>
       </div>
     </>
   );
