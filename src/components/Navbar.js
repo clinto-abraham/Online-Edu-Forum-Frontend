@@ -40,6 +40,11 @@ function Navbar() {
                 <LockIcon className="icon" /> Logout
               </Link>
             </span>
+            <span className="text-muted d-none">
+              <Link to="/online-edu-forum/backend/random-serial-no/admin-sign-in" className="link">
+                <LockIcon className="icon" /> Admin
+              </Link>
+            </span>
           </div>
         </div>
         <nav className="navbar navbar-dark bg-dark">
