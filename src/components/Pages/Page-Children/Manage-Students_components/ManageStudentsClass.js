@@ -4,14 +4,10 @@ import { Box, Container } from '@material-ui/core';
 import StudentManagement from './studentManage';
 import StudentUpdate from './studentUpdate';
 import { students } from './students';
-import BottomNavbar from '../../bottomNavbar';
-
-import Navbar from '../../Navbar';
 
 
 const ManageStudentsClass = () => (
   <>
-    <Navbar />
     <Helmet>
       <title>Customers | Material Kit</title>
     </Helmet>
@@ -29,7 +25,6 @@ const ManageStudentsClass = () => (
         </Box>
       </Container>
     </Box>
-    <BottomNavbar />
   </>
 );
 

@@ -1,41 +1,46 @@
 import React, { useState } from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
+
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import { Avatar, Button, TextField, Grid, Checkbox, Box, FormControlLabel, Typography, Container } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-
-import Container from '@material-ui/core/Container';
 import useStyles from '../Styles/makeStyles';
 import { CCardBody } from '@coreui/react';
-import BottomNavbar from '../bottomNavbar';
-import NavbarAdmin from './NavbarAdmin/NavbarAdmin';
+// 
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { signin } from '../../redux/actions/auth';
 
+const initialState = { username: '', password: ''};
+// 
 
+export default function SignIn() {
 
-
-export default function AdminSignIn() {
-  const [username,setUsername] = useState({
-    username: '',
-    password: ''
-  })
+  // 
   
 
-  function handleChange (e){
-    setUsername({ ...username, username:e.target.value});
-  }
+  const [form, setForm] = useState({ username: '', password: ''});
+  const dispatch = useDispatch();
+  const history = useHistory();
+    
+  function handleSubmit (e) {
+    e.preventDefault();
+    console.log(form, history);
+    dispatch(signin(form, history));
+    clear();
+  };
 
+const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+function clear (){
+  setForm(initialState);
+}
+  // 
+ 
   const classes = useStyles();
-
+  
+  
   return (
     <>
-    <NavbarAdmin />
     <CCardBody>
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -46,30 +51,35 @@ export default function AdminSignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
+            type="text"
             id="username"
             label="username"
             name="username"
             autoComplete="username"
             autoFocus
-            value={username.username}
+            value={form.username}
             onChange={handleChange}
           />
+          
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            name="password"
-            label="password"
             type="password"
             id="password"
-            autoComplete="current-password"
+            label="password"
+            name="password"
+            autoComplete="password"
+            autoFocus
+            value={form.password}
+            onChange={handleChange}
           />
           <FormControlLabel
             control={<Checkbox name="remember" value="remember" color="primary" />}
@@ -96,7 +106,6 @@ export default function AdminSignIn() {
       </Box>
     </Container>
     </CCardBody>
-    <BottomNavbar />
     </>
   );
 }

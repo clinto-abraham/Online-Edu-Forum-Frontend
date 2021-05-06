@@ -1,12 +1,47 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import {
   BarChart as BarChartIcon,
   Lock as LockIcon,
   Settings as SettingsIcon,
 } from "react-feather";
+//
+import React, { useState, useEffect } from "react";
+
+import { Link, useHistory, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import decode from "jwt-decode";
+import * as actionType from "../../redux/constants/actionTypes";
 
 function Navbar() {
+  //
+
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const history = useHistory();
+
+  function logout() {
+    dispatch({ type: actionType.LOGOUT });
+
+    history.push("/");
+
+    setUser(null);
+  }
+
+  useEffect(() => {
+    const token = user?.token;
+
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        logout();
+        history.push("/");
+      }
+    }
+
+    setUser(JSON.parse(localStorage.getItem("profile")));
+  }, [location]);
+  //
   return (
     <>
       <div className="pos-f-t">
@@ -35,15 +70,8 @@ function Navbar() {
                 <SettingsIcon /> Account Settings
               </Link>
             </span>
-            <span className="text-muted">
-              <Link to="/" className="link">
-                <LockIcon className="icon" /> Logout
-              </Link>
-            </span>
-            <span className="text-muted d-none">
-              <Link to="/online-edu-forum/backend/random-serial-no/admin-sign-in" className="link">
-                <LockIcon className="icon" /> Admin
-              </Link>
+            <span onClick={logout} className="text-muted link">
+              <LockIcon className="icon" /> Logout
             </span>
           </div>
         </div>
